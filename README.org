@@ -1,0 +1,19 @@
+#+title: Simple Game Boy emulator
+
+* Build
+** Requirements
+*For the moment, the build process only supports Linux.*
+
+The only requirement is just a standard compliant C compiler.
+
+** How to build
+To build this project, you need to compile the executable which will be used to 
+build the rest of project.
+
+#+begin_src shell
+  cc -std=c11 -o yab yab.c
+  ./yab
+#+end_src
+
+This executable also checks if there is any modifications to the sources files
+to either rebuild itself or to rebuild the project.
