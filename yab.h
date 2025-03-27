@@ -177,7 +177,7 @@ int yab_need_rebuild(const char *binary_name, const char **sources, size_t nb_so
 
 void yab__try_rebuild(int argc, const char **argv, const char *source, ...);
 
-#define YAB_REBUILD_SRC(argc, argv, ...) yab__try_rebuild((argc), (argv), __FILE__, __VA_ARGS__, NULL)
+#define YAB_REBUILD_SRC(argc, argv, ...) _yab_try_rebuild((argc), (argv), __FILE__, __VA_ARGS__, NULL)
 #define YAB_REBUILD(argc, argv) YAB_REBUILD_SRC(argc, argv, NULL)
 
 #ifdef YAB_IMPLEMENTATION
@@ -420,7 +420,7 @@ int yab_need_rebuild(const char *binary_name, const char **sources, size_t nb_so
 #endif
 }
 
-void yab__try_rebuild(int argc, const char **argv, const char *source, ...)
+void _yab_try_rebuild(int argc, const char **argv, const char *source, ...)
 {
     va_list args;
     int rebuild;
